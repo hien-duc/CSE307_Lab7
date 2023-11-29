@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>querySelectorAll() Method</title>
+  </head>
+  <body>
+    <style>
+      p {
+        height: 30px;
+      }
+      .Tiltle{
+        color: blueviolet;
+      }
+    </style>
+    <script>
+      function Change() {
+        let example = document.querySelectorAll(".example");
+        example[0].style.backgroundColor = "yellow";
+        example[0].style.border = "2px solid green";
+        example[0].style.marginLeft = "20px";
+        example[0].style.padding = "3px";
+
+        example[1].style.backgroundColor = "aquamarine";
+        example[1].style.border = "2px solid green";
+        example[1].style.marginLeft = "20px";
+        example[1].style.padding = "3px";
+
+        example[2].style.border = "2px solid red";
+        example[2].style.textDecoration = "none";
+
+        example[3].style.border = "2px solid red";
+        example[3].style.textDecoration = "none";
+        let title = document.querySelectorAll(".Tiltle");
+        title[0].style.color = "orange";
+        title[1].style.color = "orange";
+      }
+    </script>
+    <div style="width: 400px">
+      <p style="color: green; background-color: aquamarine" class="example">
+        This is the first paragraph with class "example".
+      </p>
+      <p style="color: green; background-color: aquamarine" class="example">
+        Another paragraph with class "example".
+      </p>
+      <p>This is another paragraph</p>
+    </div>
+    <a href="#" id="link" class="example">Link with target attribute</a>
+    <br />
+    <br />
+
+    <a href="#" id="link" class="example">Another link with target attribute</a>
+    <br />
+    <h1 class="Tiltle">Tiltle 1</h1>
+    <h2 class="Tiltle">Tiltle 2</h2>
+    <input type="button" value="Change" onclick="Change() " />
+  </body>
+</html>
