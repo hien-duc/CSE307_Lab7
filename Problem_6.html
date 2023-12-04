@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+  </head>
+
+  <body>
+    <form name="Register form" method="post">
+      <table border="1">
+        <tr>
+          <th><label for="name">Full Name*</label></th>
+          <td>
+            <input type="text" size="53" id="name" />
+            <p id="validName" style="color: red"></p>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="email">Email*</label></th>
+          <td>
+            <input type="email" size="53" pattern="" id="email" />
+            <p id="validEmail" style="color: red"></p>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="password">PassWord*</label></th>
+          <td>
+            <input type="password" size="53" id="password" />
+            <p id="validPassword" style="color: red"></p>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="confirm password">Confirm password*</label></th>
+          <td>
+            <input type="password" size="53" id="confirm password" />
+            <p id="validConfirmPassword" style="color: red"></p>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="Phone Number">Phone Number*</label></th>
+          <td>
+            <input type="tel" size="53" id="Phone Number" />
+          </td>
+        </tr>
+
+        <tr>
+          <th><label for="Address">Address</label></th>
+          <td>
+            <textarea name="" cols="55" rows="5" id="Address"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="city">City</label></th>
+          <td>
+            <input type="text" placeholder="Enter your City" id="city" /><label
+              for="state"
+            >
+              State </label
+            ><input type="text" placeholder="Enter your State" id="state" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th><label for="Zip/Postal Cod">Zip/Postal Cod</label></th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter your Zip/Postal Code"
+              size="53"
+              id="Zip/Postal Cod"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="Country">Country</label></th>
+          <td>
+            <select name="Country" id="Country" id>
+              <option value="" hidden>[Select your Country]</option>
+              <option value="Viet Nam">Viet Nam</option>
+              <option value="America">America</option>
+              <option value="China">Japan</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="Birthday">Birthday</label></th>
+          <td>
+            <input type="date" name="Birthday" id="Birthday" />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="Gender">Gender</label></th>
+          <td>
+            <select name="Country" id="Gender">
+              <option value="Nam">Male</option>
+              <option value="Nu">Female</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="Starting date">Starting date</label></th>
+          <td>
+            <input type="radio" name="date" id="Starting date" /><label
+              for="Spring"
+            >
+              Spring
+            </label>
+            <input type="radio" name="date" id="Spring" /><label>
+              Summer
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="Comments">Comments</label></th>
+          <td>
+            <textarea
+              name=""
+              cols="55"
+              rows="5"
+              placeholder="Please send us more information"
+              id="Comments"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <center>
+              <input type="button" value="Submit" onclick="validateData()" />
+            </center>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function validateData() {
+        let Fullname = document.getElementById("name").value;
+        let Email = document.getElementById("email").value;
+        let Password = document.getElementById("password").value;
+        let ConfirmPassword = document.getElementById("confirm password").value;
+
+        if (!Fullname || !Email) {
+          document.getElementById("validName").innerHTML =
+            "Please input your name";
+          document.getElementById("validEmail").innerHTML =
+            "Please input your email";
+          document.getElementById("validPassword").innerHTML =
+            "Please input your password(min-length = 6)";
+          document.getElementById("validConfirmPassword").innerHTML =
+            "It does not match your password";
+        } else {
+          document.getElementById("validFullname").innerHTML = "";
+          document.getElementById("validEmail").innerHTML = "";
+        }
+        if (!Password || Password.length < 6) {
+          document.getElementById("validPassword").innerHTML =
+            "Please input your password(min-length = 6)";
+        } else if (Password || Password.length >= 6) {
+          document.getElementById("validPassword").innerHTML = "";
+        }
+        if (!ConfirmPassword || Password !== ConfirmPassword) {
+          document.getElementById("validConfirmPassword").innerHTML =
+            "It does not match your password";
+        } else {
+          document.getElementById("validConfirmPassword").innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
